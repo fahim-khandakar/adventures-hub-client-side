@@ -16,19 +16,19 @@ const Profile = () => {
               <img
                 className="w-[25px] md:w-[30px] rounded-full"
                 src={user.photoURL}
-                alt="Photo"
+                alt="user"
               />
             ) : photo ? (
               <img
                 className="w-[20px] md:w-[30px] rounded-full"
                 src={photo}
-                alt="photo"
+                alt="user"
               />
             ) : (
               <img
                 className="w-[20px] md:w-[30px] rounded-full"
                 src={profile}
-                alt="Photo"
+                alt="user"
               />
             )}
           </div>

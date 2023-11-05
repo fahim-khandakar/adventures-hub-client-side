@@ -6,7 +6,7 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import { useContext } from "react";
 
 const Navbar = () => {
-  const { logOut, user, name } = useContext(AuthContext);
+  const { logOut, user } = useContext(AuthContext);
   const signOut = () => {
     logOut().then().catch();
   };
@@ -18,15 +18,37 @@ const Navbar = () => {
       <li>
         <NavLink to="/services">Services</NavLink>
       </li>
-      <li>
-        <NavLink to="/login">Log In</NavLink>
-      </li>
+
+      {user && (
+        <details className="dropdown">
+          <summary
+            style={{
+              cursor: "pointer",
+              outline: "none",
+              listStyleType: "none",
+            }}
+          >
+            Dashboard
+          </summary>
+          <ul className=" menu-sm dropdown-content text-left text-black mt-1 z-[1] p-2 shadow bg-base-200 rounded-box w-52">
+            <li>
+              <NavLink to="myServices">My Services</NavLink>
+            </li>
+            <li>
+              <NavLink to="addServices">Add Services</NavLink>
+            </li>
+            <li>
+              <NavLink to="mySchedules">My Schedules</NavLink>
+            </li>
+          </ul>
+        </details>
+      )}
     </>
   );
 
   return (
     <div className="shadow-md w-full ">
-      <div className="navbar font-serif text-[#403f3f] mx-auto max-w-6xl px-5 md:px-0 ">
+      <div className="navbar font-serif text-[#482551] mx-auto max-w-6xl px-5 md:px-0 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className=" lg:hidden">
@@ -47,7 +69,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="gap-10 menu-sm dropdown-content text-black mt-1 z-[1] p-2 shadow bg-base-200 rounded-box w-52"
+              className="flex flex-col  menu-sm dropdown-content text-black mt-1 z-[1] p-2 shadow bg-base-200 rounded-box w-52"
             >
               {navLinks}
             </ul>

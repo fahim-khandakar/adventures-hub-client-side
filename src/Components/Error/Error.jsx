@@ -15,7 +15,7 @@ const Error = () => {
       <div className="flex justify-center p-5 md:p-0  flex-col gap-5 items-center text-xl text-center h-screen">
         {View}
         <Link to="/">
-          <button className="btn">Back To Home</button>
+          <button className="btn btn-error">Back To Home</button>
         </Link>
       </div>
     </div>

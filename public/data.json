@@ -1,0 +1,222 @@
+[
+  {
+    "serviceProviderName": "Tour Guide Pro",
+    "serviceProviderLocation": "Paris, France",
+    "shortDescriptionAboutServiceProvider": "Experienced tour guides offering unique travel experiences.",
+    "serviceImage": "tour-image-1.jpg",
+    "serviceName": "Eiffel Tower Tour",
+    "serviceDescription": "Explore the iconic Eiffel Tower with our guided tour.",
+    "serviceProviderImage": "tour-guide-image-1.jpg",
+    "servicePrice": 50,
+    "providersEmail": "tourguidepro@example.com"
+  },
+  {
+    "serviceProviderName": "Adventure Explorers",
+    "serviceProviderLocation": "Machu Picchu, Peru",
+    "shortDescriptionAboutServiceProvider": "Your gateway to adventurous tours and expeditions.",
+    "serviceImage": "tour-image-2.jpg",
+    "serviceName": "Machu Picchu Trek",
+    "serviceDescription": "Embark on an unforgettable trek to Machu Picchu.",
+    "serviceProviderImage": "tour-guide-image-2.jpg",
+    "servicePrice": 800,
+    "providersEmail": "adventureexplorers@example.com"
+  },
+  {
+    "serviceProviderName": "City Discoveries",
+    "serviceProviderLocation": "New York City, USA",
+    "shortDescriptionAboutServiceProvider": "Discover the hidden gems of the Big Apple with our expert guides.",
+    "serviceImage": "tour-image-3.jpg",
+    "serviceName": "Statue of Liberty Tour",
+    "serviceDescription": "Get up close to the Statue of Liberty on our guided tour.",
+    "serviceProviderImage": "tour-guide-image-3.jpg",
+    "servicePrice": 35,
+    "providersEmail": "citydiscoveries@example.com"
+  },
+  {
+    "serviceProviderName": "Wildlife Wonders",
+    "serviceProviderLocation": "Safari, Kenya",
+    "shortDescriptionAboutServiceProvider": "Safari adventures to witness Kenya's wildlife in its natural habitat.",
+    "serviceImage": "tour-image-4.jpg",
+    "serviceName": "Kenya Safari Expedition",
+    "serviceDescription": "Experience the thrill of a Kenyan safari adventure.",
+    "serviceProviderImage": "tour-guide-image-4.jpg",
+    "servicePrice": 1200,
+    "providersEmail": "wildlifewonders@example.com"
+  },
+  {
+    "serviceProviderName": "Historical Journeys",
+    "serviceProviderLocation": "Rome, Italy",
+    "shortDescriptionAboutServiceProvider": "Explore ancient history and culture with our expert historians.",
+    "serviceImage": "tour-image-5.jpg",
+    "serviceName": "Colosseum Guided Tour",
+    "serviceDescription": "Walk through history with our Colosseum guided tour.",
+    "serviceProviderImage": "tour-guide-image-5.jpg",
+    "servicePrice": 60,
+    "providersEmail": "historicaljourneys@example.com"
+  },
+  {
+    "serviceProviderName": "Tropical Paradise Tours",
+    "serviceProviderLocation": "Bali, Indonesia",
+    "shortDescriptionAboutServiceProvider": "Discover the beauty of Bali with our tropical tours.",
+    "serviceImage": "tour-image-6.jpg",
+    "serviceName": "Bali Beaches Experience",
+    "serviceDescription": "Relax and enjoy Bali's stunning beaches with our guided tour.",
+    "serviceProviderImage": "tour-guide-image-6.jpg",
+    "servicePrice": 70,
+    "providersEmail": "tropicalparadisetours@example.com"
+  },
+  {
+    "serviceProviderName": "Mountain Adventures",
+    "serviceProviderLocation": "Swiss Alps, Switzerland",
+    "shortDescriptionAboutServiceProvider": "Mountain expeditions and Alpine adventures in Switzerland.",
+    "serviceImage": "tour-image-7.jpg",
+    "serviceName": "Swiss Alps Hiking",
+    "serviceDescription": "Hike through the picturesque Swiss Alps with our expert guides.",
+    "serviceProviderImage": "tour-guide-image-7.jpg",
+    "servicePrice": 500,
+    "providersEmail": "mountainadventures@example.com"
+  },
+  {
+    "serviceProviderName": "Desert Trekkers",
+    "serviceProviderLocation": "Sahara Desert, Morocco",
+    "shortDescriptionAboutServiceProvider": "Explore the vast Sahara Desert on a unique adventure.",
+    "serviceImage": "tour-image-8.jpg",
+    "serviceName": "Sahara Desert Trek",
+    "serviceDescription": "Trek through the stunning Sahara Desert landscapes.",
+    "serviceProviderImage": "tour-guide-image-8.jpg",
+    "servicePrice": 900,
+    "providersEmail": "deserttrekkers@example.com"
+  },
+  {
+    "serviceProviderName": "Cruise Adventures",
+    "serviceProviderLocation": "Caribbean Sea",
+    "shortDescriptionAboutServiceProvider": "Cruise vacations and island hopping in the Caribbean.",
+    "serviceImage": "tour-image-9.jpg",
+    "serviceName": "Caribbean Cruise",
+    "serviceDescription": "Set sail on a Caribbean cruise adventure.",
+    "serviceProviderImage": "tour-guide-image-9.jpg",
+    "servicePrice": 1200,
+    "providersEmail": "cruiseadventures@example.com"
+  },
+  {
+    "serviceProviderName": "Wine Tasting Tours",
+    "serviceProviderLocation": "Napa Valley, USA",
+    "shortDescriptionAboutServiceProvider": "Wine enthusiasts, explore Napa Valley's finest wineries.",
+    "serviceImage": "tour-image-10.jpg",
+    "serviceName": "Napa Valley Wine Tasting",
+    "serviceDescription": "Savor exquisite wines in Napa Valley with our guided tour.",
+    "serviceProviderImage": "tour-guide-image-10.jpg",
+    "servicePrice": 80,
+    "providersEmail": "winetastingtours@example.com"
+  },
+  {
+    "serviceProviderName": "Mystical Adventures",
+    "serviceProviderLocation": "Machu Picchu, Peru",
+    "shortDescriptionAboutServiceProvider": "Journey to mystical Machu Picchu and experience its history.",
+    "serviceImage": "tour-image-11.jpg",
+    "serviceName": "Machu Picchu Mysteries",
+    "serviceDescription": "Unravel the mysteries of Machu Picchu with our guides.",
+    "serviceProviderImage": "tour-guide-image-11.jpg",
+    "servicePrice": 750,
+    "providersEmail": "mysticaladventures@example.com"
+  },
+  {
+    "serviceProviderName": "Scenic Bike Tours",
+    "serviceProviderLocation": "Amsterdam, Netherlands",
+    "shortDescriptionAboutServiceProvider": "Explore Amsterdam's beauty on a scenic bike tour.",
+    "serviceImage": "tour-image-12.jpg",
+    "serviceName": "Amsterdam Bike Tour",
+    "serviceDescription": "Cycle through Amsterdam's picturesque streets with our guided tour.",
+    "serviceProviderImage": "tour-guide-image-12.jpg",
+    "servicePrice": 40,
+    "providersEmail": "scenicbiketours@example.com"
+  },
+  {
+    "serviceProviderName": "Wildlife Safaris",
+    "serviceProviderLocation": "Serengeti, Tanzania",
+    "shortDescriptionAboutServiceProvider": "Safari adventures in the heart of the Serengeti.",
+    "serviceImage": "tour-image-13.jpg",
+    "serviceName": "Serengeti Safari",
+    "serviceDescription": "Witness the stunning wildlife of the Serengeti on our safari.",
+    "serviceProviderImage": "tour-guide-image-13.jpg",
+    "servicePrice": 950,
+    "providersEmail": "wildlifesafaris@example.com"
+  },
+  {
+    "serviceProviderName": "Island Paradise Getaways",
+    "serviceProviderLocation": "Maldives",
+    "shortDescriptionAboutServiceProvider": "Escape to the Maldives for a perfect island getaway.",
+    "serviceImage": "tour-image-14.jpg",
+    "serviceName": "Maldives Island Retreat",
+    "serviceDescription": "Relax on the beautiful islands of the Maldives with our guided tour.",
+    "serviceProviderImage": "tour-guide-image-14.jpg",
+    "servicePrice": 1500,
+    "providersEmail": "islandgetaways@example.com"
+  },
+  {
+    "serviceProviderName": "Historical Expeditions",
+    "serviceProviderLocation": "Athens, Greece",
+    "shortDescriptionAboutServiceProvider": "Explore ancient Greece's historical wonders with our guides.",
+    "serviceImage": "tour-image-15.jpg",
+    "serviceName": "Ancient Athens Tour",
+    "serviceDescription": "Step back in time and explore ancient Athens with our guided tour.",
+    "serviceProviderImage": "tour-guide-image-15.jpg",
+    "servicePrice": 45,
+    "providersEmail": "historicalexpeds@example.com"
+  },
+  {
+    "serviceProviderName": "Trekking Adventures",
+    "serviceProviderLocation": "Nepal",
+    "shortDescriptionAboutServiceProvider": "Trek through the Himalayas for a breathtaking adventure.",
+    "serviceImage": "tour-image-16.jpg",
+    "serviceName": "Himalayan Trek",
+    "serviceDescription": "Embark on an epic trek through the Himalayas with our guides.",
+    "serviceProviderImage": "tour-guide-image-16.jpg",
+    "servicePrice": 1100,
+    "providersEmail": "trekkingadventures@example.com"
+  },
+  {
+    "serviceProviderName": "Cultural Immersion",
+    "serviceProviderLocation": "Kyoto, Japan",
+    "shortDescriptionAboutServiceProvider": "Immerse yourself in Kyoto's rich cultural heritage.",
+    "serviceImage": "tour-image-17.jpg",
+    "serviceName": "Kyoto Cultural Experience",
+    "serviceDescription": "Experience the traditions and culture of Kyoto with our guided tour.",
+    "serviceProviderImage": "tour-guide-image-17.jpg",
+    "servicePrice": 55,
+    "providersEmail": "culturalimmersion@example.com"
+  },
+  {
+    "serviceProviderName": "Jungle Expeditions",
+    "serviceProviderLocation": "Amazon Rainforest, Brazil",
+    "shortDescriptionAboutServiceProvider": "Discover the wonders of the Amazon rainforest with our experts.",
+    "serviceImage": "tour-image-18.jpg",
+    "serviceName": "Amazon Jungle Adventure",
+    "serviceDescription": "Navigate the Amazon rainforest on an exciting adventure.",
+    "serviceProviderImage": "tour-guide-image-18.jpg",
+    "servicePrice": 900,
+    "providersEmail": "jungleexpeditions@example.com"
+  },
+  {
+    "serviceProviderName": "Architectural Tours",
+    "serviceProviderLocation": "Barcelona, Spain",
+    "shortDescriptionAboutServiceProvider": "Explore the architectural gems of Barcelona with our guides.",
+    "serviceImage": "tour-image-19.jpg",
+    "serviceName": "Barcelona Architectural Tour",
+    "serviceDescription": "Discover the unique architecture of Barcelona with our guided tour.",
+    "serviceProviderImage": "tour-guide-image-19.jpg",
+    "servicePrice": 65,
+    "providersEmail": "architecturaltours@example.com"
+  },
+  {
+    "serviceProviderName": "Tropical Paradise Tours",
+    "serviceProviderLocation": "Bali, Indonesia",
+    "shortDescriptionAboutServiceProvider": "Discover the beauty of Bali with our tropical tours.",
+    "serviceImage": "tour-image-20.jpg",
+    "serviceName": "Bali Beaches Experience",
+    "serviceDescription": "Relax and enjoy Bali's stunning beaches with our guided tour.",
+    "serviceProviderImage": "tour-guide-image-20.jpg",
+    "servicePrice": 70,
+    "providersEmail": "tropicalparadisetours@example.com"
+  }
+]
