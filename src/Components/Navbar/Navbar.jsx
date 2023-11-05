@@ -1,8 +1,15 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/download-removebg-preview (1).png";
 import "./Navbar.css";
+import Profile from "../Profile/Profile";
+import { AuthContext } from "../../Providers/AuthProviders";
+import { useContext } from "react";
 
 const Navbar = () => {
+  const { logOut, user, name } = useContext(AuthContext);
+  const signOut = () => {
+    logOut().then().catch();
+  };
   const navLinks = (
     <>
       <li>
@@ -53,19 +60,28 @@ const Navbar = () => {
           <ul className="gap-10 menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end gap-2 md:gap-5">
-          {/* <Profile></Profile> */}
-
-          {/* <div>
-            {user ? (
-              <li className="list-none md:btn text-xs md:text-base md:btn-ghost">
-                <button onClick={signOut}>Sign Out</button>
-              </li>
-            ) : (
-              <li className="list-none md:btn md:btn-ghost text-xs md:text-base">
-                <NavLink to="/login">Login</NavLink>
-              </li>
-            )}
-          </div> */}
+          {user ? (
+            <details>
+              <summary
+                style={{
+                  cursor: "pointer",
+                  outline: "none",
+                  listStyleType: "none",
+                }}
+              >
+                <Profile></Profile>
+              </summary>
+              <ul className="p-2 absolute shadow menu dropdown-content z-[1] bg-white text-black rounded-box w-32 md:w-40">
+                <li className="list-none mx-auto rounded-md  text-xs md:text-base md:btn-ghost">
+                  <button onClick={signOut}>Sign Out</button>
+                </li>
+              </ul>
+            </details>
+          ) : (
+            <li className="list-none md:btn md:btn-ghost text-xs md:text-base">
+              <NavLink to="/login">Login</NavLink>
+            </li>
+          )}
         </div>
       </div>
     </div>

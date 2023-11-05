@@ -1,7 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import animation from "../../assets/Animation - 1699119782858.json";
 import { useLottie } from "lottie-react";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProviders";
+import { updateProfile } from "firebase/auth";
+import auth from "../../firebase/firebase.config";
+import swal from "sweetalert";
 
 const Register = () => {
   const options = {
@@ -10,6 +15,60 @@ const Register = () => {
   };
 
   const { View } = useLottie(options);
+
+  //   authentication
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { signInWithGoogle, createUser } = useContext(AuthContext);
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    const form = new FormData(e.currentTarget);
+    const name = form.get("name");
+    const photo = form.get("photo");
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(name, photo, email, password);
+    if (password.length < 6) {
+      return swal(
+        "Error!",
+        "Password should be at least 6 characters!",
+        "error"
+      );
+    } else if (!/[A-Z]/.test(password)) {
+      return swal("Error!", "Password must have a capital letter!", "error");
+    } else if (!/[^a-zA-Z0-9\s]/.test(password)) {
+      return swal("Error!", "Password must have a special character!", "error");
+    }
+
+    createUser(email, password, name, photo)
+      .then(() => {
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: photo,
+        })
+          .then(() => {
+            navigate(location?.state ? location.state : "/");
+          })
+          .catch();
+        swal("Success!", "Successfully Account Created", "success");
+        e.target.reset();
+      })
+      .catch((error) => {
+        swal("Error!", error.message, "error");
+      });
+  };
+
+  const handleLoginWithGoogle = () => {
+    signInWithGoogle()
+      .then(() => {
+        navigate(location?.state ? location.state : "/");
+        swal("Success!", "Successfully Account Created", "success");
+      })
+      .catch((error) => {
+        swal("Error!", error.message, "error");
+      });
+  };
   return (
     <div className="max-w-6xl mx-auto p-5 md:p-0 mt-10">
       <div>
@@ -20,7 +79,7 @@ const Register = () => {
               Please Register
             </h2>
             <form
-              // onSubmit={handleRegister}
+              onSubmit={handleRegister}
               className="w-full md:w-3/4 lg:w-1/2  mx-auto"
             >
               <div className="form-control">
@@ -57,7 +116,6 @@ const Register = () => {
                   name="photo"
                   placeholder="Photo URL"
                   className="input input-bordered"
-                  required
                 />
               </div>
               <div className="form-control">
@@ -84,7 +142,10 @@ const Register = () => {
                 <button className="btn bg-[#ffa500] font-bold">Register</button>
               </div>
               <div className=" mt-2">
-                <button className="btn btn-ghost font-bold">
+                <button
+                  className="btn btn-ghost font-bold"
+                  onClick={handleLoginWithGoogle}
+                >
                   <FcGoogle></FcGoogle> Google
                 </button>
               </div>
