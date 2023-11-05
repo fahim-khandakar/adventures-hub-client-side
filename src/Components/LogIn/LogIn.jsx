@@ -85,7 +85,7 @@ const LogIn = () => {
               </div>
               <div className=" mt-5">
                 <button
-                  className="btn btn-ghost font-bold"
+                  className="btn btn-ghost font-bold w-full"
                   onClick={handleLoginWithGoogle}
                 >
                   <FcGoogle></FcGoogle> Google

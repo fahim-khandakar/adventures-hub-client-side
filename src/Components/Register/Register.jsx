@@ -143,7 +143,7 @@ const Register = () => {
               </div>
               <div className=" mt-2">
                 <button
-                  className="btn btn-ghost font-bold"
+                  className="btn btn-ghost font-bold w-full"
                   onClick={handleLoginWithGoogle}
                 >
                   <FcGoogle></FcGoogle> Google

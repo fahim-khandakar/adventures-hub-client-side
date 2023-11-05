@@ -30,7 +30,7 @@ const Navbar = () => {
           >
             Dashboard
           </summary>
-          <ul className=" menu-sm dropdown-content text-left text-black mt-1 z-[1] p-2 shadow bg-base-200 rounded-box w-52">
+          <ul className=" menu-sm dropdown-content text-left text-[#482551] mt-1 z-[1] p-2 shadow bg-base-200 rounded-box w-52">
             <li>
               <NavLink to="myServices">My Services</NavLink>
             </li>
