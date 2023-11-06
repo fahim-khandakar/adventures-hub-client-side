@@ -1,16 +1,18 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import Container from "../../Hooks/Container";
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import axios from "axios";
 import swal from "sweetalert";
+import OtherService from "../../Components/OtherService/OtherService";
 
 const ServiceDetails = () => {
   const { id } = useParams();
   const { user } = useContext(AuthContext);
   const clientEmail = user.email;
   const dialogRef = useRef(null);
+  const [otherData, setOtherData] = useState([]);
 
   const { isLoading, data } = useQuery({
     queryKey: ["serviceDetails"],
@@ -19,6 +21,28 @@ const ServiceDetails = () => {
         res.json()
       ),
   });
+  const { isLoading: isLoadingOther, data: dataOther } = useQuery({
+    queryKey: ["otherData"],
+    queryFn: () =>
+      fetch(`http://localhost:5000/myServices?email=${clientEmail}`).then(
+        (res) => res.json()
+      ),
+  });
+
+  useEffect(() => {
+    // Set totalData when data from useQuery is available
+    if (!isLoadingOther && dataOther) {
+      setOtherData(dataOther);
+    }
+  }, [isLoadingOther, dataOther]);
+
+  if (isLoadingOther) {
+    return (
+      <div className="flex justify-center">
+        <span className="loading loading-spinner loading-lg "></span>
+      </div>
+    );
+  }
   if (isLoading) {
     return (
       <div className="flex justify-center">
@@ -274,6 +298,21 @@ const ServiceDetails = () => {
               </div>
             </div>
           </dialog>
+          {otherData.length > 0 && (
+            <div>
+              <h1 className="text-[#482551] my-10 text-2xl md:text-5xl font-bold text-center">
+                Other Services
+              </h1>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {dataOther.map((otherData, index) => (
+                  <OtherService
+                    key={index}
+                    otherData={otherData}
+                  ></OtherService>
+                ))}
+              </div>
+            </div>
+          )}
         </Container>
       )}
     </div>

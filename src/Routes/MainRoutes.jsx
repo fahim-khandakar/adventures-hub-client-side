@@ -11,6 +11,7 @@ import MyServices from "../pages/MyServices.jsx/MyServices";
 import PrivateRoute from "./PrivateRoutes";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import UpdateService from "../Components/UpdateService/UpdateService";
+import RelatedService from "../pages/RelatedService/RelatedService";
 
 const MainRoutes = createBrowserRouter([
   {
@@ -75,6 +76,14 @@ const MainRoutes = createBrowserRouter([
         element: (
           <PrivateRoute>
             <UpdateService></UpdateService>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/relatedService/:id",
+        element: (
+          <PrivateRoute>
+            <RelatedService></RelatedService>
           </PrivateRoute>
         ),
       },
