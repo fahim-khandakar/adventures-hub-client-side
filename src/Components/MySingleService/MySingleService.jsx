@@ -1,7 +1,9 @@
+import axios from "axios";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 /* eslint-disable react/prop-types */
-const SingleService = ({ service }) => {
+const MySingleService = ({ service, totalData, setTotalData }) => {
   const {
     _id,
     userPhoto,
@@ -12,6 +14,26 @@ const SingleService = ({ service }) => {
     price,
     description,
   } = service;
+  const handleDelete = () => {
+    axios.delete(`http://localhost:5000/services/${_id}`).then((res) => {
+      if (res.data.deletedCount) {
+        const remaining = totalData.map((item) => item.id !== _id);
+        setTotalData(remaining);
+        return swal(
+          "Success",
+          "Your service was successfully deleted.",
+          "success"
+        );
+      } else {
+        return swal(
+          "Error!",
+          "Something went wrong. Please try again later.",
+          "error"
+        );
+      }
+    });
+  };
+
   return (
     <div className="shadow-lg p-5 rounded-md">
       <div className="flex flex-col md:flex-row gap-5">
@@ -44,15 +66,21 @@ const SingleService = ({ service }) => {
         </div>
         <div className="flex gap-5  items-center">
           <p className="font-bold text-[#482551]">Price: ${price}</p>
-          <Link to={`/serviceDetails/${_id}`}>
+          <Link>
             <button className="btn btn-sm btn-warning md:btn-md  md:btn-warning">
-              Details
+              Edit
             </button>
           </Link>
+          <button
+            onClick={handleDelete}
+            className="btn btn-sm btn-warning md:btn-md  md:btn-warning"
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default SingleService;
+export default MySingleService;

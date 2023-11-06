@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 const HomeServices = ({ service }) => {
   const {
+    _id,
     userPhoto,
     userName,
     serviceArea,
@@ -41,7 +44,9 @@ const HomeServices = ({ service }) => {
         </div>
         <div className="flex gap-5  items-center">
           <p className="font-bold text-[#482551]">Price: ${price}</p>
-          <button className="btn btn-sm btn-warning">Details</button>
+          <Link to={`/serviceDetails/${_id}`}>
+            <button className="btn btn-sm btn-warning">Details</button>
+          </Link>
         </div>
       </div>
     </div>

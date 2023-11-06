@@ -9,6 +9,7 @@ import AddServices from "../pages/AddServices/AddServices";
 import MySchedules from "../pages/MySchedules/MySchedules";
 import MyServices from "../pages/MyServices.jsx/MyServices";
 import PrivateRoute from "./PrivateRoutes";
+import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 
 const MainRoutes = createBrowserRouter([
   {
@@ -59,6 +60,14 @@ const MainRoutes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/serviceDetails/:id",
+        element: (
+          <PrivateRoute>
+            <ServiceDetails></ServiceDetails>
+          </PrivateRoute>
+        ),
       },
     ],
   },

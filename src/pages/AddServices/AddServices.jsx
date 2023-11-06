@@ -3,6 +3,7 @@ import Container from "../../Hooks/Container";
 import { AuthContext } from "../../Providers/AuthProviders";
 import axios from "axios";
 import CapitalizeWords from "../../Hooks/CapitalizeWords";
+import swal from "sweetalert";
 
 const AddServices = () => {
   const { user } = useContext(AuthContext);
@@ -28,9 +29,22 @@ const AddServices = () => {
       serviceArea,
       description,
     };
-    axios
-      .post("http://localhost:5000/services", fullData)
-      .then((res) => console.log(res.data));
+    axios.post("http://localhost:5000/services", fullData).then((res) => {
+      if (res.data.insertedId) {
+        form.reset();
+        return swal(
+          "Success",
+          "Your service was successfully added.",
+          "success"
+        );
+      } else {
+        return swal(
+          "Error!",
+          "Something went wrong. Please try again later.",
+          "error"
+        );
+      }
+    });
   };
 
   return (

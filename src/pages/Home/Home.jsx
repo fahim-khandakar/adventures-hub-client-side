@@ -6,6 +6,7 @@ import HomeServices from "../Services/HomeServices";
 import Container from "../../Hooks/Container";
 import { useQuery } from "@tanstack/react-query";
 import { NavLink } from "react-router-dom";
+// import { useState } from "react";
 
 const Home = () => {
   // const [services, setServices] = useState([]);
