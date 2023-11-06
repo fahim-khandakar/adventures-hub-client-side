@@ -44,6 +44,8 @@ const ServiceDetails = () => {
     const form = e.target;
     const yourInstruction = form.yourInstruction.value;
     const serviceTakingDate = form.serviceTakingDate.value;
+    const status = "Pending";
+    console.log(status);
     const fullData = {
       email,
       clientEmail,
@@ -52,6 +54,7 @@ const ServiceDetails = () => {
       price,
       yourInstruction,
       serviceTakingDate,
+      status,
     };
     axios.post("http://localhost:5000/bookings", fullData).then((res) => {
       if (res.data.insertedId) {

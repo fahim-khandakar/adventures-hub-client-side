@@ -14,24 +14,34 @@ const MySingleService = ({ service, totalData, setTotalData }) => {
     price,
     description,
   } = service;
-  const handleDelete = () => {
-    axios.delete(`http://localhost:5000/services/${_id}`).then((res) => {
-      if (res.data.deletedCount) {
-        const remaining = totalData.map((item) => item.id !== _id);
-        setTotalData(remaining);
-        return swal(
-          "Success",
-          "Your service was successfully deleted.",
-          "success"
-        );
-      } else {
-        return swal(
-          "Error!",
-          "Something went wrong. Please try again later.",
-          "error"
-        );
-      }
+  const handleDelete = async () => {
+    const willDelete = await swal({
+      title: "Are you sure?",
+      text: "Are you sure that you want to delete this service?",
+      icon: "warning",
+      dangerMode: true,
     });
+
+    if (willDelete) {
+      swal("Deleted!", "Your imaginary file has been deleted!", "success");
+      axios.delete(`http://localhost:5000/services/${_id}`).then((res) => {
+        if (res.data.deletedCount) {
+          const remaining = totalData.map((item) => item.id !== _id);
+          setTotalData(remaining);
+          return swal(
+            "Success",
+            "Your service was successfully deleted.",
+            "success"
+          );
+        } else {
+          return swal(
+            "Error!",
+            "Something went wrong. Please try again later.",
+            "error"
+          );
+        }
+      });
+    }
   };
 
   return (
