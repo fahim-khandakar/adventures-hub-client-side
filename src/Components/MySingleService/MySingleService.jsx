@@ -66,7 +66,7 @@ const MySingleService = ({ service, totalData, setTotalData }) => {
         </div>
         <div className="flex gap-5  items-center">
           <p className="font-bold text-[#482551]">Price: ${price}</p>
-          <Link>
+          <Link to={`/updateService/${_id}`}>
             <button className="btn btn-sm btn-warning md:btn-md  md:btn-warning">
               Edit
             </button>

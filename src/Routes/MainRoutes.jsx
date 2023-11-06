@@ -10,6 +10,7 @@ import MySchedules from "../pages/MySchedules/MySchedules";
 import MyServices from "../pages/MyServices.jsx/MyServices";
 import PrivateRoute from "./PrivateRoutes";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
+import UpdateService from "../Components/UpdateService/UpdateService";
 
 const MainRoutes = createBrowserRouter([
   {
@@ -66,6 +67,14 @@ const MainRoutes = createBrowserRouter([
         element: (
           <PrivateRoute>
             <ServiceDetails></ServiceDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/updateService/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateService></UpdateService>
           </PrivateRoute>
         ),
       },

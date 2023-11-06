@@ -11,7 +11,7 @@ const MyServices = () => {
   const { isLoading, data } = useQuery({
     queryKey: ["myServices", totalData],
     queryFn: () =>
-      fetch(`http://localhost:5000/services?email=${email}}`).then((res) =>
+      fetch(`http://localhost:5000/myServices?email=${email}`).then((res) =>
         res.json()
       ),
   });
@@ -33,14 +33,23 @@ const MyServices = () => {
 
   return (
     <Container>
-      {totalData.map((service, index) => (
-        <MySingleService
-          key={index}
-          setTotalData={setTotalData}
-          totalData={totalData}
-          service={service}
-        ></MySingleService>
-      ))}
+      {totalData.length > 0 ? (
+        totalData.map((service, index) => (
+          <MySingleService
+            key={index}
+            setTotalData={setTotalData}
+            totalData={totalData}
+            service={service}
+          ></MySingleService>
+        ))
+      ) : (
+        <div className="flex justify-center">
+          <img
+            src="https://t4.ftcdn.net/jpg/04/75/01/23/360_F_475012363_aNqXx8CrsoTfJP5KCf1rERd6G50K0hXw.jpg"
+            alt=""
+          />
+        </div>
+      )}
     </Container>
   );
 };
