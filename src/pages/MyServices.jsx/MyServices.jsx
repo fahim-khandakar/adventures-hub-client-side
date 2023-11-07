@@ -12,12 +12,9 @@ const MyServices = () => {
   const { isLoading, data } = useQuery({
     queryKey: ["myServices", totalData],
     queryFn: () =>
-      fetch(
-        `https://adventures-hub-server.vercel.app/myServices?email=${email}`,
-        {
-          credentials: "include",
-        }
-      ).then((res) => res.json()),
+      fetch(`https://adventures-hub.web.app/myServices?email=${email}`, {
+        credentials: "include",
+      }).then((res) => res.json()),
   });
 
   useEffect(() => {

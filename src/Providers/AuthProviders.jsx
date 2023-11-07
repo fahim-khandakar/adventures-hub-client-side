@@ -50,13 +50,13 @@ const AuthProviders = ({ children }) => {
       setLoading(false);
       if (currentUser) {
         axios
-          .post("https://adventures-hub-server.vercel.app/jwt", loggedUser, {
+          .post("https://adventures-hub.web.app/jwt", loggedUser, {
             withCredentials: true,
           })
           .then((res) => res.data);
       } else {
         axios
-          .post("https://adventures-hub-server.vercel.app/logout", loggedUser, {
+          .post("https://adventures-hub.web.app/logout", loggedUser, {
             withCredentials: true,
           })
           .then((res) => res.data);
