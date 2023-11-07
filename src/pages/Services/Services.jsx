@@ -31,11 +31,11 @@ const Services = () => {
         <title>Adventures Hub | Services</title>
       </Helmet>
       <form onSubmit={handleSearch}>
-        <div className="join flex justify-center my-16">
+        <div className="join flex flex-col md:flex-row md:gap-0 gap-2  justify-center my-16">
           <div>
             <div>
               <input
-                className="input input-bordered join-item"
+                className="input w-full md:w-auto input-bordered join-item"
                 name="inputValue"
                 placeholder="Search"
               />

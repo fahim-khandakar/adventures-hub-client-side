@@ -168,7 +168,7 @@ const AddServices = () => {
               </div>
 
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Add</button>
+                <button className="btn btn-warning">Add</button>
               </div>
             </form>
           </div>

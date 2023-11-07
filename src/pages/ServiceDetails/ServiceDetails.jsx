@@ -304,7 +304,7 @@ const ServiceDetails = () => {
           </dialog>
           {otherData.length > 0 && (
             <div>
-              <h1 className="text-[#482551] my-10 text-2xl md:text-5xl font-bold text-center">
+              <h1 className="text-[#482551] underline my-10 text-2xl md:text-5xl font-bold text-center">
                 Other Services
               </h1>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

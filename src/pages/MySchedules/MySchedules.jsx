@@ -68,9 +68,18 @@ const MySchedules = () => {
             My Bookings
           </h1>
           <div>
-            {bookings.map((booking, index) => (
-              <MyBooking key={index} booking={booking}></MyBooking>
-            ))}
+            {bookings.length > 0 ? (
+              bookings.map((booking, index) => (
+                <MyBooking key={index} booking={booking}></MyBooking>
+              ))
+            ) : (
+              <div className="flex justify-center">
+                <img
+                  src="https://t4.ftcdn.net/jpg/04/75/01/23/360_F_475012363_aNqXx8CrsoTfJP5KCf1rERd6G50K0hXw.jpg"
+                  alt=""
+                />
+              </div>
+            )}
           </div>
         </div>
 
@@ -80,9 +89,18 @@ const MySchedules = () => {
             My Pending Works
           </h1>
           <div>
-            {pending.map((work, index) => (
-              <MyPending key={index} work={work}></MyPending>
-            ))}
+            {pending.length > 0 ? (
+              pending.map((work, index) => (
+                <MyPending key={index} work={work}></MyPending>
+              ))
+            ) : (
+              <div className="flex justify-center">
+                <img
+                  src="https://t4.ftcdn.net/jpg/04/75/01/23/360_F_475012363_aNqXx8CrsoTfJP5KCf1rERd6G50K0hXw.jpg"
+                  alt=""
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>

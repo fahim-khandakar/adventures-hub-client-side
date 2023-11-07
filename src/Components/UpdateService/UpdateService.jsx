@@ -11,12 +11,13 @@ const UpdateService = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/serviceDetails/${id}`)
+      .get(`http://localhost:5000/serviceDetails/${id}`, {
+        withCredentials: true,
+      })
       .then((res) => setData(res.data));
   }, [id]);
 
   const {
-    _id,
     email,
     userName,
     serviceArea,
@@ -188,7 +189,7 @@ const UpdateService = () => {
               </div>
 
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Update</button>
+                <button className="btn btn-warning">Update</button>
               </div>
             </form>
           </div>

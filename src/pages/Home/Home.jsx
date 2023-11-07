@@ -25,8 +25,8 @@ const Home = () => {
       </Helmet>
       <Banner></Banner>
       <Container>
-        <h1 className="text-2xl text-[#482551] text-center my-20 md:text-5xl font-bold">
-          Popular Tour Services
+        <h1 className="text-2xl text-[#482551] underline text-center my-20 md:text-5xl font-bold">
+          <span className="text-[#c83d86]">Popular</span> Tour Services
         </h1>
         {isLoading ? (
           <div className="flex justify-center">

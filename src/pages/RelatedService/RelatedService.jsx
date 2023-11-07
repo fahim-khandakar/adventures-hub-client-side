@@ -76,12 +76,9 @@ const RelatedService = () => {
           </div>
           <div className="flex gap-5  items-center">
             <p className="font-bold text-[#482551]">Price: ${price}</p>
-            <button
-              onClick={() => document.getElementById("my_modal_5").showModal()}
-              className="btn btn-sm btn-warning"
-            >
-              Book Now
-            </button>
+            <Link to={`/serviceDetails/${_id}`}>
+              <button className="btn btn-sm btn-warning">For Booking</button>
+            </Link>
           </div>
         </div>
       </div>

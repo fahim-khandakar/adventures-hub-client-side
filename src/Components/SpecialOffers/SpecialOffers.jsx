@@ -4,8 +4,8 @@ const SpecialOffers = () => {
   return (
     <Container>
       <div className="mt-20 text-center">
-        <h1 className="font-bold text-2xl md:text-5xl text-[#c83d86] ">
-          Special Offers
+        <h1 className="font-bold text-2xl underline md:text-5xl text-[#482551] ">
+          <span className="text-[#c83d86]">Special</span> Offers
         </h1>
         <p className="text-[#482551] mt-5">
           Explore our limited-time special offers, <br /> where you can enjoy
