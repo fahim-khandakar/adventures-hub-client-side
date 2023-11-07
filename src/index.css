@@ -83,6 +83,13 @@ article {
   transform: rotate(-90deg);
 }
 
+@media only screen and (max-width: 768px) {
+  .progress-wheel {
+    top: 62px;
+    left: 10px;
+  }
+}
+
 .progress-wheel circle {
   stroke-dashoffset: 0;
   stroke-width: 30%;

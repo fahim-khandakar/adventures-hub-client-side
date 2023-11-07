@@ -100,7 +100,7 @@ const Navbar = () => {
               </ul>
             </details>
           ) : (
-            <li className="list-none md:btn md:btn-ghost text-xs md:text-base">
+            <li className="list-none md:btn md:btn-ghost text-[#482551]  text-xs md:text-base">
               <NavLink to="/login">Login</NavLink>
             </li>
           )}

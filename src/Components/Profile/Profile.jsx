@@ -7,7 +7,7 @@ const Profile = () => {
   return (
     <div>
       {user && (
-        <div className="flex   gap-3 md:gap-5 items-center">
+        <div className="flex  text-[#482551]  gap-3 md:gap-5 items-center">
           <div className=" text-xs md:text-base text-center">
             {user.displayName ? user.displayName : name}
           </div>

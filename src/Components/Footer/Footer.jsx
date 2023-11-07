@@ -13,6 +13,18 @@ const Footer = () => {
             </p>
           </aside>
           <nav>
+            <header className="footer-title">Location</header>
+            <div className="flex flex-col gap-4 font-semibold text-[#482551]">
+              <a>
+                <p>Mirpur-1, Dhaka-1216</p>
+              </a>
+
+              <a>
+                <p>Email: fahimkhandakar01@gmail.com</p>
+              </a>
+            </div>
+          </nav>
+          <nav>
             <header className="footer-title">Social</header>
             <div className="grid grid-flow-col gap-4">
               <a>
