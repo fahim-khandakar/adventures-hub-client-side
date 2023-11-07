@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/download-removebg-preview (1).png";
 import "./Navbar.css";
 import Profile from "../Profile/Profile";
@@ -8,9 +8,13 @@ import swal from "sweetalert";
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
+  const navigate = useNavigate();
   const signOut = () => {
     logOut()
-      .then(() => swal("Successfully!", "You Are Log Out", "success"))
+      .then(() => {
+        navigate("/");
+        swal("Successfully!", "You Are Log Out", "success");
+      })
       .catch(() => swal("Opps!", "Something went wrong", "error"));
   };
   const navLinks = (
