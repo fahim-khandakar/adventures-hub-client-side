@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Container from "../../Hooks/Container";
 import MySingleService from "../../Components/MySingleService/MySingleService";
+import { Helmet } from "react-helmet-async";
 
 const MyServices = () => {
   const { user } = useContext(AuthContext);
@@ -11,9 +12,9 @@ const MyServices = () => {
   const { isLoading, data } = useQuery({
     queryKey: ["myServices", totalData],
     queryFn: () =>
-      fetch(`http://localhost:5000/myServices?email=${email}`).then((res) =>
-        res.json()
-      ),
+      fetch(`http://localhost:5000/myServices?email=${email}`, {
+        credentials: "include",
+      }).then((res) => res.json()),
   });
 
   useEffect(() => {
@@ -33,6 +34,9 @@ const MyServices = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>Adventures Hub | My Services</title>
+      </Helmet>
       {totalData.length > 0 ? (
         totalData.map((service, index) => (
           <MySingleService

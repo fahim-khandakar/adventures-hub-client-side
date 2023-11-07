@@ -6,6 +6,7 @@ import HomeServices from "../Services/HomeServices";
 import Container from "../../Hooks/Container";
 import { useQuery } from "@tanstack/react-query";
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 // import { useState } from "react";
 
 const Home = () => {
@@ -19,6 +20,9 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Adventures Hub | Home</title>
+      </Helmet>
       <Banner></Banner>
       <Container>
         <h1 className="text-2xl text-[#482551] text-center my-20 md:text-5xl font-bold">

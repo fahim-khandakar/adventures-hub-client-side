@@ -3,6 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import loginPic from "../../assets/undraw_secure_login_pdn4.svg";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { useContext } from "react";
+import { Helmet } from "react-helmet-async";
 
 const LogIn = () => {
   const { signIn, signInWithGoogle } = useContext(AuthContext);
@@ -35,6 +36,9 @@ const LogIn = () => {
   };
   return (
     <div className="max-w-6xl mx-auto p-5 md:p-0 mt-10">
+      <Helmet>
+        <title>Adventures Hub | Login</title>
+      </Helmet>
       <div>
         <div className="flex flex-col items-center  md:flex-row gap-10 mt-10">
           <div className="w-full md:w-1/2">

@@ -4,6 +4,7 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import { useQuery } from "@tanstack/react-query";
 import MyBooking from "../../Components/MyBooking/MyBooking";
 import MyPending from "../../Components/MyPending/MyPending";
+import { Helmet } from "react-helmet-async";
 
 const MySchedules = () => {
   const { user } = useContext(AuthContext);
@@ -13,17 +14,17 @@ const MySchedules = () => {
   const { isLoading, data } = useQuery({
     queryKey: ["myBookings"],
     queryFn: () =>
-      fetch(`http://localhost:5000/myBookings?email=${email}`).then((res) =>
-        res.json()
-      ),
+      fetch(`http://localhost:5000/myBookings?email=${email}`, {
+        credentials: "include",
+      }).then((res) => res.json()),
   });
 
   const { isLoading: isLoadingPending, data: dataPending } = useQuery({
-    queryKey: ["myPendings"],
+    queryKey: ["myPending"],
     queryFn: () =>
-      fetch(`http://localhost:5000/myPending?email=${email}`).then((res) =>
-        res.json()
-      ),
+      fetch(`http://localhost:5000/myPending?email=${email}`, {
+        credentials: "include",
+      }).then((res) => res.json()),
   });
 
   useEffect(() => {
@@ -57,6 +58,9 @@ const MySchedules = () => {
   }
   return (
     <Container>
+      <Helmet>
+        <title>Adventures Hub | My Schedules</title>
+      </Helmet>
       <div className="flex flex-col md:flex-row gap-10 my-10">
         {/* my bookings */}
         <div className="w-full md:w-1/2 ">

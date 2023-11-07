@@ -4,6 +4,7 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import axios from "axios";
 import CapitalizeWords from "../../Hooks/CapitalizeWords";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet-async";
 
 const AddServices = () => {
   const { user } = useContext(AuthContext);
@@ -49,6 +50,9 @@ const AddServices = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>Adventures Hub | Add Service</title>
+      </Helmet>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div>

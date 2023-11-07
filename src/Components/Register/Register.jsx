@@ -7,6 +7,7 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import { updateProfile } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const options = {
@@ -71,6 +72,9 @@ const Register = () => {
   };
   return (
     <div className="max-w-6xl mx-auto p-5 md:p-0 mt-10">
+      <Helmet>
+        <title>Adventures Hub | Registration</title>
+      </Helmet>
       <div>
         <div className="flex flex-col md:flex-row items-center gap-10   ">
           <div className="w-full md:w-1/2">{View}</div>

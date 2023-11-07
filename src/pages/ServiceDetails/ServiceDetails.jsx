@@ -6,6 +6,7 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import axios from "axios";
 import swal from "sweetalert";
 import OtherService from "../../Components/OtherService/OtherService";
+import { Helmet } from "react-helmet-async";
 
 const ServiceDetails = () => {
   const { id } = useParams();
@@ -17,16 +18,16 @@ const ServiceDetails = () => {
   const { isLoading, data } = useQuery({
     queryKey: ["serviceDetails"],
     queryFn: () =>
-      fetch(`http://localhost:5000/serviceDetails/${id}`).then((res) =>
-        res.json()
-      ),
+      fetch(`http://localhost:5000/serviceDetails/${id}`, {
+        credentials: "include",
+      }).then((res) => res.json()),
   });
   const { isLoading: isLoadingOther, data: dataOther } = useQuery({
     queryKey: ["otherData"],
     queryFn: () =>
-      fetch(`http://localhost:5000/myServices?email=${clientEmail}`).then(
-        (res) => res.json()
-      ),
+      fetch(`http://localhost:5000/myServices?email=${clientEmail}`, {
+        credentials: "include",
+      }).then((res) => res.json()),
   });
 
   useEffect(() => {
@@ -91,6 +92,9 @@ const ServiceDetails = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Adventures Hub | Service Details</title>
+      </Helmet>
       {isLoading ? (
         <div className="flex justify-center">
           <span className="loading loading-spinner loading-lg "></span>

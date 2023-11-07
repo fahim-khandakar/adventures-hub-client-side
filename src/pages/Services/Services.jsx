@@ -3,6 +3,7 @@ import Container from "../../Hooks/Container";
 import SingleService from "../../Components/SingleService/SingleService";
 import { useState } from "react";
 import CapitalizeWords from "../../Hooks/CapitalizeWords";
+import { Helmet } from "react-helmet-async";
 
 const Services = () => {
   const [count, setCount] = useState(6);
@@ -26,6 +27,9 @@ const Services = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>Adventures Hub | Services</title>
+      </Helmet>
       <form onSubmit={handleSearch}>
         <div className="join flex justify-center my-16">
           <div>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CapitalizeWords from "../../Hooks/CapitalizeWords";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet-async";
 
 const UpdateService = () => {
   const [data, setData] = useState([]);
@@ -61,6 +62,9 @@ const UpdateService = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Adventures Hub | Service Update</title>
+      </Helmet>
       <h1 className="text-2xl md:text-5xl text-[#482551] font-bold text-center mt-5 ">
         Update Product
       </h1>

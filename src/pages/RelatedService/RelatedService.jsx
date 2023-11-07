@@ -2,6 +2,7 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import Container from "../../Hooks/Container";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const RelatedService = () => {
   const { id } = useParams();
@@ -10,7 +11,9 @@ const RelatedService = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/serviceDetails/${id}`)
+      .get(`http://localhost:5000/serviceDetails/${id}`, {
+        withCredentials: true,
+      })
       .then((res) => setRelated(res.data));
   }, [id]);
 
@@ -29,7 +32,8 @@ const RelatedService = () => {
     if (related.serviceName) {
       axios
         .get(
-          `http://localhost:5000/relatedService?serviceName=${related.serviceName}`
+          `http://localhost:5000/relatedService?serviceName=${related.serviceName}`,
+          { withCredentials: true }
         )
         .then((res) => setRelatedService(res.data));
     }
@@ -38,6 +42,9 @@ const RelatedService = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>Adventures Hub | Related Service</title>
+      </Helmet>
       <div className="shadow-lg p-5 rounded-md">
         <div className="flex flex-col md:flex-row gap-5">
           <div className="w-full md:w-1/2">
