@@ -11,7 +11,7 @@ const UpdateService = () => {
 
   useEffect(() => {
     axios
-      .get(`https://adventures-hub.web.app/serviceDetails/${id}`, {
+      .get(`https://adventures-hub-server.vercel.app/serviceDetails/${id}`, {
         withCredentials: true,
       })
       .then((res) => setData(res.data));
@@ -43,7 +43,10 @@ const UpdateService = () => {
       description,
     };
     axios
-      .put(`https://adventures-hub.web.app/updateService/${id}`, fullData)
+      .put(
+        `https://adventures-hub-server.vercel.app/updateService/${id}`,
+        fullData
+      )
       .then((res) => {
         if (res.data.modifiedCount > 0) {
           form.reset();

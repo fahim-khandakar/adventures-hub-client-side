@@ -4,11 +4,14 @@ import "./Navbar.css";
 import Profile from "../Profile/Profile";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { useContext } from "react";
+import swal from "sweetalert";
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
   const signOut = () => {
-    logOut().then().catch();
+    logOut()
+      .then(() => swal("Successfully!", "You Are Log Out", "success"))
+      .catch(() => swal("Opps!", "Something went wrong", "error"));
   };
   const navLinks = (
     <>

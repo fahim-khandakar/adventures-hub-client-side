@@ -13,7 +13,7 @@ const Services = () => {
     queryKey: ["singleService", price, category],
     queryFn: () =>
       fetch(
-        `https://adventures-hub.web.app/services?sortField=price&sortOrder=${price}&serviceName=${CapitalizeWords(
+        `https://adventures-hub-server.vercel.app/services?sortField=price&sortOrder=${price}&serviceName=${CapitalizeWords(
           category
         )}`
       ).then((res) => res.json()),

@@ -25,7 +25,7 @@ const MySingleService = ({ service, totalData, setTotalData }) => {
     if (willDelete) {
       swal("Deleted!", "Your imaginary file has been deleted!", "success");
       axios
-        .delete(`https://adventures-hub.web.app/services/${_id}`)
+        .delete(`https://adventures-hub-server.vercel.app/services/${_id}`)
         .then((res) => {
           if (res.data.deletedCount) {
             const remaining = totalData.map((item) => item.id !== _id);

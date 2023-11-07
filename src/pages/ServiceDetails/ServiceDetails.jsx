@@ -18,16 +18,19 @@ const ServiceDetails = () => {
   const { isLoading, data } = useQuery({
     queryKey: ["serviceDetails"],
     queryFn: () =>
-      fetch(`https://adventures-hub.web.app/serviceDetails/${id}`, {
+      fetch(`https://adventures-hub-server.vercel.app/serviceDetails/${id}`, {
         credentials: "include",
       }).then((res) => res.json()),
   });
   const { isLoading: isLoadingOther, data: dataOther } = useQuery({
     queryKey: ["otherData"],
     queryFn: () =>
-      fetch(`https://adventures-hub.web.app/myServices?email=${clientEmail}`, {
-        credentials: "include",
-      }).then((res) => res.json()),
+      fetch(
+        `https://adventures-hub-server.vercel.app/myServices?email=${clientEmail}`,
+        {
+          credentials: "include",
+        }
+      ).then((res) => res.json()),
   });
 
   useEffect(() => {
@@ -82,7 +85,7 @@ const ServiceDetails = () => {
       status,
     };
     axios
-      .post("https://adventures-hub.web.app/bookings", fullData)
+      .post("https://adventures-hub-server.vercel.app/bookings", fullData)
       .then((res) => {
         if (res.data.insertedId) {
           form.reset();

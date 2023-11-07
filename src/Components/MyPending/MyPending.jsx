@@ -8,7 +8,7 @@ const MyPending = ({ work }) => {
   const notify = () => toast("Successfully Updated!");
   const handleConfirmation = (newStatus) => {
     axios
-      .put(`https://adventures-hub.web.app/bookings/${_id}`, {
+      .put(`https://adventures-hub-server.vercel.app/bookings/${_id}`, {
         work,
         status: newStatus,
       })

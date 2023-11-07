@@ -14,17 +14,23 @@ const MySchedules = () => {
   const { isLoading, data } = useQuery({
     queryKey: ["myBookings"],
     queryFn: () =>
-      fetch(`https://adventures-hub.web.app/myBookings?email=${email}`, {
-        credentials: "include",
-      }).then((res) => res.json()),
+      fetch(
+        `https://adventures-hub-server.vercel.app/myBookings?email=${email}`,
+        {
+          credentials: "include",
+        }
+      ).then((res) => res.json()),
   });
 
   const { isLoading: isLoadingPending, data: dataPending } = useQuery({
     queryKey: ["myPending"],
     queryFn: () =>
-      fetch(`https://adventures-hub.web.app/myPending?email=${email}`, {
-        credentials: "include",
-      }).then((res) => res.json()),
+      fetch(
+        `https://adventures-hub-server.vercel.app/myPending?email=${email}`,
+        {
+          credentials: "include",
+        }
+      ).then((res) => res.json()),
   });
 
   useEffect(() => {

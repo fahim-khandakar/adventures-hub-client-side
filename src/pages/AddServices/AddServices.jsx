@@ -31,7 +31,7 @@ const AddServices = () => {
       description,
     };
     axios
-      .post("https://adventures-hub.web.app/services", fullData)
+      .post("https://adventures-hub-server.vercel.app/services", fullData)
       .then((res) => {
         if (res.data.insertedId) {
           form.reset();
