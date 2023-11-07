@@ -64,8 +64,8 @@ const MySchedules = () => {
       <div className="flex flex-col md:flex-row gap-10 my-10">
         {/* my bookings */}
         <div className="w-full md:w-1/2 ">
-          <h1 className="text-2xl md:text-5xl font-bold text-center text-[#482551] underline">
-            My Bookings
+          <h1 className="text-2xl md:text-4xl font-bold text-center text-[#482551] underline">
+            My <span className="text-[#c83d86]">Bookings</span>
           </h1>
           <div>
             {bookings.length > 0 ? (
@@ -85,8 +85,8 @@ const MySchedules = () => {
 
         {/* my pending */}
         <div className="w-full md:w-1/2">
-          <h1 className="text-2xl md:text-5xl text-center font-bold text-[#482551] underline">
-            My Pending Works
+          <h1 className="text-2xl md:text-4xl text-center font-bold text-[#482551] underline">
+            My <span className="text-[#c83d86]">Pending</span> Works
           </h1>
           <div>
             {pending.length > 0 ? (

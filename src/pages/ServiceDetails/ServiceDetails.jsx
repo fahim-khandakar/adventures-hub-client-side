@@ -70,7 +70,7 @@ const ServiceDetails = () => {
     const yourInstruction = form.yourInstruction.value;
     const serviceTakingDate = form.serviceTakingDate.value;
     const status = "Pending";
-    console.log(status);
+    status;
     const fullData = {
       email,
       clientEmail,

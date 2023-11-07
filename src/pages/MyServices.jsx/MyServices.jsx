@@ -38,7 +38,7 @@ const MyServices = () => {
         <title>Adventures Hub | My Services</title>
       </Helmet>
       <h1 className="text-2xl md:text-5xl text-center my-10 underline font-bold text-[#482551]">
-        Service Management
+        Service <span className="text-[#c83d86]">Management</span>
       </h1>
       {totalData.length > 0 ? (
         totalData.map((service, index) => (

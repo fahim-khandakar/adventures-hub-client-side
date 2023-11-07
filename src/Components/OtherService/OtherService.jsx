@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const OtherService = ({ otherData }) => {
   const { _id, userPhoto, userName, servicePhoto, serviceName, price } =
     otherData;
-  console.log(otherData);
+  otherData;
   return (
     <div className="shadow-lg p-5 rounded-md">
       <div className="flex flex-col md:flex-row gap-5">

@@ -5,7 +5,7 @@ import { ImLocation2 } from "react-icons/im";
 const Testimonial = () => {
   return (
     <Container>
-      <div className="flex  flex-col md:flex-row items-center gap-10 mt-20">
+      <div className="flex  flex-col md:flex-row items-center  mt-20">
         <div className="w-full md:w-2/3">
           <div>
             <h4>Testimonial</h4>
@@ -46,12 +46,19 @@ const Testimonial = () => {
           </div>
         </div>
         <div className="w-full md:w-1/3">
-          <p className="flex gap-1 items-center">
+          <img
+            className="w-[50px] h-[50px] object-cover rounded-full mt-5"
+            src={`https://images.unsplash.com/photo-1611637576109-b6f76185ec9b?auto=format&fit=crop&q=80&w=1374&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
+            alt=""
+          />
+          <p className="flex gap-1 items-center my-3">
             <ImLocation2></ImLocation2>
             <b className="text-[#482551]">From United States</b>
           </p>
+          <h4 className="text-[#482551] font-bold my-3">
+            This tour was fantastic!
+          </h4>
 
-          <h4 className="text-[#482551] my-5">This tour was fantastic!</h4>
           <p className="text-[#482551]">
             I recently went on a guided tour with Adventures Hub, and it was an
             incredible experience! Our guide was knowledgeable and made the
@@ -60,11 +67,6 @@ const Testimonial = () => {
             culture, and enjoy delicious cuisine. I can't wait to book my next
             adventure with this fantastic team.
           </p>
-          <img
-            className="w-[50px] h-[50px] object-cover rounded-full mt-5"
-            src={`https://images.unsplash.com/photo-1611637576109-b6f76185ec9b?auto=format&fit=crop&q=80&w=1374&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
-            alt=""
-          />
         </div>
       </div>
     </Container>

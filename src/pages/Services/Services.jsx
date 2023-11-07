@@ -63,6 +63,13 @@ const Services = () => {
           <div className="flex justify-center">
             <span className="loading loading-spinner loading-lg "></span>
           </div>
+        ) : data.length <= 0 ? (
+          <div className="flex justify-center">
+            <img
+              src="https://t4.ftcdn.net/jpg/04/75/01/23/360_F_475012363_aNqXx8CrsoTfJP5KCf1rERd6G50K0hXw.jpg"
+              alt=""
+            />
+          </div>
         ) : (
           data
             .slice(0, count)
@@ -71,12 +78,14 @@ const Services = () => {
             ))
         )}
         <div className="flex justify-center my-5">
-          <button
-            onClick={() => setCount(data.length)}
-            className={count > 6 ? "hidden" : "btn btn-warning"}
-          >
-            View More
-          </button>
+          {!isLoading && data.length > 6 && (
+            <button
+              onClick={() => setCount(data.length)}
+              className={count > 6 ? "hidden" : "btn btn-warning"}
+            >
+              View More
+            </button>
+          )}
         </div>
       </div>
     </Container>

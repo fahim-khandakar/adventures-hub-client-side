@@ -38,7 +38,7 @@ const RelatedService = () => {
         .then((res) => setRelatedService(res.data));
     }
   }, [related.serviceName]);
-  console.log(relatedService);
+  relatedService;
 
   return (
     <Container>
