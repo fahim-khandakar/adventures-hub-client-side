@@ -30,22 +30,24 @@ const AddServices = () => {
       serviceArea,
       description,
     };
-    axios.post("http://localhost:5000/services", fullData).then((res) => {
-      if (res.data.insertedId) {
-        form.reset();
-        return swal(
-          "Success",
-          "Your service was successfully added.",
-          "success"
-        );
-      } else {
-        return swal(
-          "Error!",
-          "Something went wrong. Please try again later.",
-          "error"
-        );
-      }
-    });
+    axios
+      .post("https://adventures-hub-server.vercel.app/services", fullData)
+      .then((res) => {
+        if (res.data.insertedId) {
+          form.reset();
+          return swal(
+            "Success",
+            "Your service was successfully added.",
+            "success"
+          );
+        } else {
+          return swal(
+            "Error!",
+            "Something went wrong. Please try again later.",
+            "error"
+          );
+        }
+      });
   };
 
   return (

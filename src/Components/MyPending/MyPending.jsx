@@ -8,7 +8,10 @@ const MyPending = ({ work }) => {
   const notify = () => toast("Successfully Updated!");
   const handleConfirmation = (newStatus) => {
     axios
-      .put(`http://localhost:5000/bookings/${_id}`, { work, status: newStatus })
+      .put(`https://adventures-hub-server.vercel.app/bookings/${_id}`, {
+        work,
+        status: newStatus,
+      })
       .then((res) => {
         if (res.data.modifiedCount > 0) {
           return notify();

@@ -24,23 +24,25 @@ const MySingleService = ({ service, totalData, setTotalData }) => {
 
     if (willDelete) {
       swal("Deleted!", "Your imaginary file has been deleted!", "success");
-      axios.delete(`http://localhost:5000/services/${_id}`).then((res) => {
-        if (res.data.deletedCount) {
-          const remaining = totalData.map((item) => item.id !== _id);
-          setTotalData(remaining);
-          return swal(
-            "Success",
-            "Your service was successfully deleted.",
-            "success"
-          );
-        } else {
-          return swal(
-            "Error!",
-            "Something went wrong. Please try again later.",
-            "error"
-          );
-        }
-      });
+      axios
+        .delete(`https://adventures-hub-server.vercel.app/services/${_id}`)
+        .then((res) => {
+          if (res.data.deletedCount) {
+            const remaining = totalData.map((item) => item.id !== _id);
+            setTotalData(remaining);
+            return swal(
+              "Success",
+              "Your service was successfully deleted.",
+              "success"
+            );
+          } else {
+            return swal(
+              "Error!",
+              "Something went wrong. Please try again later.",
+              "error"
+            );
+          }
+        });
     }
   };
 

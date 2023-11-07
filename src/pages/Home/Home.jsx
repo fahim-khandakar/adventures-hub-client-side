@@ -15,7 +15,9 @@ const Home = () => {
   const { isLoading, data } = useQuery({
     queryKey: ["homeServices"],
     queryFn: () =>
-      fetch("http://localhost:5000/services").then((res) => res.json()),
+      fetch("https://adventures-hub-server.vercel.app/services").then((res) =>
+        res.json()
+      ),
   });
 
   return (

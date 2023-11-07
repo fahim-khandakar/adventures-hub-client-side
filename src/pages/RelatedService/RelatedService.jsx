@@ -11,7 +11,7 @@ const RelatedService = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/serviceDetails/${id}`, {
+      .get(`https://adventures-hub-server.vercel.app/serviceDetails/${id}`, {
         withCredentials: true,
       })
       .then((res) => setRelated(res.data));
@@ -32,7 +32,7 @@ const RelatedService = () => {
     if (related.serviceName) {
       axios
         .get(
-          `http://localhost:5000/relatedService?serviceName=${related.serviceName}`,
+          `https://adventures-hub-server.vercel.app/relatedService?serviceName=${related.serviceName}`,
           { withCredentials: true }
         )
         .then((res) => setRelatedService(res.data));
