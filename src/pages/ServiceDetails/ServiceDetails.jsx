@@ -23,10 +23,10 @@ const ServiceDetails = () => {
       }).then((res) => res.json()),
   });
   const { isLoading: isLoadingOther, data: dataOther } = useQuery({
-    queryKey: ["otherData"],
+    queryKey: ["otherData", data],
     queryFn: () =>
       fetch(
-        `https://adventures-hub-server.vercel.app/myServices?email=${clientEmail}`,
+        `https://adventures-hub-server.vercel.app/myServices?email=${data?.email}`,
         {
           credentials: "include",
         }
