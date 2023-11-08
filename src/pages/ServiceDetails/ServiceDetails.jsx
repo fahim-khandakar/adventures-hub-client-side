@@ -106,69 +106,80 @@ const ServiceDetails = () => {
         </div>
       ) : (
         <Container>
-          <div className="flex flex-col md:flex-row gap-10 items-center my-10">
-            {/* service provider info */}
-            <div className="shadow-lg p-5 w-full md:w-2/5">
-              <div>
-                <img
-                  className="w-[200px] mx-auto h-[200px] object-cover rounded-full "
-                  src={userPhoto}
-                  alt=""
-                />
+          {data ? (
+            <div className="flex flex-col md:flex-row gap-10 items-center my-10">
+              {/* service provider info */}
+              <div className="shadow-lg p-5 w-full md:w-2/5">
+                <div>
+                  <img
+                    className="w-[200px] mx-auto h-[200px] object-cover rounded-full "
+                    src={userPhoto}
+                    alt=""
+                  />
+                </div>
+                <h1 className="text-center font-semibold text-[#482551] text-xl py-5">
+                  Tour Provider: {userName}
+                </h1>
+                <p className="text-center font-semibold text-[#482551] text-xl py-5">
+                  Next Tour: {serviceArea}
+                </p>
               </div>
-              <h1 className="text-center font-semibold text-[#482551] text-xl py-5">
-                Tour Provider: {userName}
-              </h1>
-              <p className="text-center font-semibold text-[#482551] text-xl py-5">
-                Next Tour: {serviceArea}
-              </p>
-            </div>
-            {/* service info  */}
-            <div className="w-full md:w-3/5">
-              <div className="shadow-lg p-5 rounded-md">
-                <div className="flex flex-col md:flex-row gap-5">
-                  <div className="w-full md:w-1/2">
-                    <img className="rounded-lg" src={servicePhoto} alt="" />
-                  </div>
-                  <div className="w-full md:w-1/2">
-                    <h1 className="text-[#482551] font-bold text-lg pb-2">
-                      Service Name: {serviceName}
-                    </h1>
+              {/* service info  */}
+              <div className="w-full md:w-3/5">
+                <div className="shadow-lg p-5 rounded-md">
+                  <div className="flex flex-col md:flex-row gap-5">
+                    <div className="w-full md:w-1/2">
+                      <img className="rounded-lg" src={servicePhoto} alt="" />
+                    </div>
+                    <div className="w-full md:w-1/2">
+                      <h1 className="text-[#482551] font-bold text-lg pb-2">
+                        Service Name: {serviceName}
+                      </h1>
 
-                    <h3 className="text-[#482551]">{description}</h3>
-                  </div>
-                </div>
-                {/* provider  */}
-                <div className="flex gap-5 items-center justify-between mt-5">
-                  <div className="flex gap-5 items-center">
-                    <div>
-                      <img
-                        className="w-[30px] h-[30px] object-cover rounded-full "
-                        src={userPhoto}
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <h2 className="font-bold text-[#482551] text-lg">
-                        {userName}
-                      </h2>
+                      <h3 className="text-[#482551]">{description}</h3>
                     </div>
                   </div>
-                  <div className="flex gap-5  items-center">
-                    <p className="font-bold text-[#482551]">Price: ${price}</p>
-                    <button
-                      onClick={() =>
-                        document.getElementById("my_modal_5").showModal()
-                      }
-                      className="btn btn-sm btn-warning"
-                    >
-                      Book Now
-                    </button>
+                  {/* provider  */}
+                  <div className="flex gap-5 items-center justify-between mt-5">
+                    <div className="flex gap-5 items-center">
+                      <div>
+                        <img
+                          className="w-[30px] h-[30px] object-cover rounded-full "
+                          src={userPhoto}
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <h2 className="font-bold text-[#482551] text-lg">
+                          {userName}
+                        </h2>
+                      </div>
+                    </div>
+                    <div className="flex gap-5  items-center">
+                      <p className="font-bold text-[#482551]">
+                        Price: ${price}
+                      </p>
+                      <button
+                        onClick={() =>
+                          document.getElementById("my_modal_5").showModal()
+                        }
+                        className="btn btn-sm btn-warning"
+                      >
+                        Book Now
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="flex justify-center ">
+              <img
+                src="https://t4.ftcdn.net/jpg/04/75/01/23/360_F_475012363_aNqXx8CrsoTfJP5KCf1rERd6G50K0hXw.jpg"
+                alt=""
+              />
+            </div>
+          )}
           {/* Open the modal using document.getElementById('ID').showModal() method */}
 
           <dialog
@@ -307,11 +318,11 @@ const ServiceDetails = () => {
               </div>
             </div>
           </dialog>
-          {otherData.length > 0 && (
-            <div>
-              <h1 className="text-[#482551] underline my-10 text-2xl md:text-5xl font-bold text-center">
-                Other Services
-              </h1>
+          <div>
+            <h1 className="text-[#482551] underline my-10 text-2xl md:text-5xl font-bold text-center">
+              Other Services
+            </h1>
+            {otherData.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {dataOther.map((otherData, index) => (
                   <OtherService
@@ -320,8 +331,15 @@ const ServiceDetails = () => {
                   ></OtherService>
                 ))}
               </div>
-            </div>
-          )}
+            ) : (
+              <div className="flex justify-center col-span-4">
+                <img
+                  src="https://t4.ftcdn.net/jpg/04/75/01/23/360_F_475012363_aNqXx8CrsoTfJP5KCf1rERd6G50K0hXw.jpg"
+                  alt=""
+                />
+              </div>
+            )}
+          </div>
         </Container>
       )}
     </div>
